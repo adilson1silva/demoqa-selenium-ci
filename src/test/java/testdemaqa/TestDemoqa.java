@@ -3,6 +3,7 @@ package testdemaqa;
 import basetest.BaseTest;
 import org.example.ElementsPage;
 import org.example.TextBox;
+import org.example.WebTabela;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -43,5 +44,23 @@ public class TestDemoqa extends BaseTest {
         //criar uma funcao
         ElementsPage elements = new ElementsPage(driver);
         elements.OpenRadioButton();
+    }
+
+    /*
+    * web tabela acoes a realizar
+    *  - adicionar dados tabela
+    *  - remover dados na tabela
+    *  - editar dados na tabela
+    * */
+
+    public void TrabalharWebTabela(){
+        driver.get("http://demoqa.com/elements");
+
+        WebTabela  webTabela = new WebTabela(driver);
+        webTabela.addicionarDadosTabela("Adilson", "Silva", "adilsons265@gmail.com", "28", "70000", "test", "");
+
+
+
+
     }
 }
