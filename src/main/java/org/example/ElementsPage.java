@@ -8,7 +8,7 @@ public class ElementsPage {
 
     private By TextBox = By.xpath("//span[@class=\"text\" and text()=\"Text Box\"]");
     private By RadioButton = By.xpath("//span[@class=\"text\" and text()=\"Radio Button\"]");
-    private By WEbTable = By.xpath("//span[@class=\"text\" and text()=\"Web Table\"]");
+    private By WEbTable = By.xpath("//span[@class=\"text\" and text()=\"Web Tables\"]");
     private By Buttons = By.xpath("//span[@class=\"text\" and text()=\"Buttons\"]");
     private By BrokenLinks_images = By.xpath("//span[@class=\"text\" and text()=\"Broken Links - Images\"]");
     private By DynamicProperties = By.xpath("//span[@class=\"text\" and text()=\"Dynamic Properties\"]");

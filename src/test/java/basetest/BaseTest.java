@@ -11,6 +11,8 @@ public class BaseTest {
 
     @BeforeClass
     public void beforeClass() {
+
+        /*
         ChromeOptions options = new ChromeOptions();
 
         // Configurações essenciais para rodar no background (headless)
@@ -18,9 +20,9 @@ public class BaseTest {
         options.addArguments("--no-sandbox");   // Necessário para rodar no GitHub Actions
         options.addArguments("--disable-dev-shm-usage"); // Evita erros de memória compartilhada
         options.addArguments("--disable-gpu");  // Desativa GPU (melhor compatibilidade)
-        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--window-size=1920,1080");*/
 
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();//options
         driver.get("https://demoqa.com/elements");
     }
 

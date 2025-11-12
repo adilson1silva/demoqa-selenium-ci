@@ -12,7 +12,7 @@ public class WebTabela {
     private By Email = By.id("userEmail");
     private By Age = By.id("age");
     private By Salary = By.id("salary");
-    private By Departament = By.id("departament");
+    private By Departament = By.id("department");
     private By Submit  = By.id("submit");
 
 

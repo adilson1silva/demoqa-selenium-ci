@@ -14,6 +14,7 @@ public class TestDemoqa extends BaseTest {
 
     UtilsClass utilsClass = new UtilsClass(driver);
 
+
     @Test
     public void devepreencherTextoFormularioComSucesso() throws InterruptedException {
         driver.get("http://demoqa.com/elements");
@@ -34,17 +35,21 @@ public class TestDemoqa extends BaseTest {
         String resultado = textbox.obterNomoMostrado();
         Assert.assertEquals(resultado, "Name:Adilson Mendes Silva", "Nome nao foi encontrado.");
 
+        Thread.sleep(5000);
 
     }
 
     @Test
-    public void deveAbrirRadioButtonComSucesso() {
+    public void deveAbrirRadioButtonComSucesso() throws InterruptedException {
         driver.get("https://demoqa.com/elements");
 
         //criar uma funcao
         ElementsPage elements = new ElementsPage(driver);
         elements.OpenRadioButton();
+        Thread.sleep(5000);
     }
+
+
 
     /*
     * web tabela acoes a realizar
@@ -52,9 +57,15 @@ public class TestDemoqa extends BaseTest {
     *  - remover dados na tabela
     *  - editar dados na tabela
     * */
-
-    public void TrabalharWebTabela(){
+    @Test
+    public void TrabalharWebTabela() throws InterruptedException {
         driver.get("http://demoqa.com/elements");
+        Thread.sleep(2000);
+
+        WebElement teste = driver.findElement(By.xpath("//span[@class=\"text\" and text()=\"Web Tables\"]"));
+        utilsClass.ScrollFindElement(driver, teste);
+        ElementsPage elements = new ElementsPage(driver);
+        elements.OpenWebTable();
 
         WebTabela  webTabela = new WebTabela(driver);
         webTabela.addicionarDadosTabela("Adilson", "Silva", "adilsons265@gmail.com", "28", "70000", "test", "");
@@ -63,4 +74,6 @@ public class TestDemoqa extends BaseTest {
 
 
     }
+
+
 }
