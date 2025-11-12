@@ -13,6 +13,9 @@ import utilsclass.UtilsClass;
 public class TestDemoqa extends BaseTest {
 
     UtilsClass utilsClass = new UtilsClass(driver);
+    ElementsPage elements = new ElementsPage(driver);
+    TextBox textbox = new TextBox(driver);
+    WebTabela  webTabela = new WebTabela(driver);
 
 
     @Test
@@ -35,7 +38,6 @@ public class TestDemoqa extends BaseTest {
         String resultado = textbox.obterNomoMostrado();
         Assert.assertEquals(resultado, "Name:Adilson Mendes Silva", "Nome nao foi encontrado.");
 
-        Thread.sleep(5000);
 
     }
 
@@ -46,7 +48,6 @@ public class TestDemoqa extends BaseTest {
         //criar uma funcao
         ElementsPage elements = new ElementsPage(driver);
         elements.OpenRadioButton();
-        Thread.sleep(5000);
     }
 
 
@@ -60,20 +61,26 @@ public class TestDemoqa extends BaseTest {
     @Test
     public void TrabalharWebTabela() throws InterruptedException {
         driver.get("http://demoqa.com/elements");
-        Thread.sleep(2000);
 
         WebElement teste = driver.findElement(By.xpath("//span[@class=\"text\" and text()=\"Web Tables\"]"));
         utilsClass.ScrollFindElement(driver, teste);
         ElementsPage elements = new ElementsPage(driver);
         elements.OpenWebTable();
 
+        //adicionar dados na tabela
         WebTabela  webTabela = new WebTabela(driver);
         webTabela.addicionarDadosTabela("Adilson", "Silva", "adilsons265@gmail.com", "28", "70000", "test", "");
 
+        //editar dados na tabela
+        webTabela.editardados("Cierra", "Ciirra", "Teixeira", "","21", "7000", "TI", "");
 
-
+        //eliminar dados
+        webTabela.eliminardados("Alden", "Delete");
+        Thread.sleep(2000);
 
     }
+
+
 
 
 }
