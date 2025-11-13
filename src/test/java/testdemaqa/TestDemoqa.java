@@ -1,6 +1,7 @@
 package testdemaqa;
 
 import basetest.BaseTest;
+import org.example.ButtonsPage;
 import org.example.ElementsPage;
 import org.example.TextBox;
 import org.example.WebTabela;
@@ -10,12 +11,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilsclass.UtilsClass;
 
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
+
 public class TestDemoqa extends BaseTest {
 
     UtilsClass utilsClass = new UtilsClass(driver);
     ElementsPage elements = new ElementsPage(driver);
     TextBox textbox = new TextBox(driver);
     WebTabela  webTabela = new WebTabela(driver);
+
 
 
     @Test
@@ -79,6 +84,32 @@ public class TestDemoqa extends BaseTest {
         Thread.sleep(2000);
 
     }
+
+    @Test
+    public void testDoubleClickButton() throws InterruptedException {
+
+        ElementsPage elements = new ElementsPage(driver);
+        elements.OpenButtons();
+
+        //fazer dublo click
+        ButtonsPage buttonsPage = new ButtonsPage(driver);
+        buttonsPage.DoDubleClick();
+
+        assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
+        //assertEquals(buttonsPage.getDoubleClickMessageText(), "You have done a right click");
+
+        //fazer click direito
+        buttonsPage.DoRightClick();
+        assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
+        //assertEquals(buttonsPage.getDoubleClickMessageText(), "You have done a right click");
+
+        //click
+        buttonsPage.DoClickMe();
+        assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
+        //assertEquals(buttonsPage.getDoubleClickMessageText(), "You have done a dynamic click");
+    }
+
+
 
 
 

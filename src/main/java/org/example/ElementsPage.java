@@ -2,6 +2,8 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utilsclass.UtilsClass;
 
 public class ElementsPage {
     private WebDriver driver;
@@ -13,7 +15,7 @@ public class ElementsPage {
     private By BrokenLinks_images = By.xpath("//span[@class=\"text\" and text()=\"Broken Links - Images\"]");
     private By DynamicProperties = By.xpath("//span[@class=\"text\" and text()=\"Dynamic Properties\"]");
 
-    public  ElementsPage(WebDriver driver) {
+        public  ElementsPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -27,7 +29,9 @@ public class ElementsPage {
         driver.findElement(WEbTable).click();
     }
     public void  OpenButtons() {
-        driver.findElement(Buttons).click();
+        WebElement button = driver.findElement(Buttons);
+        UtilsClass.ScrollFindElement(driver, button);
+        button.click();
     }
     public void  OpenBrokenLinks_images() {
         driver.findElement(BrokenLinks_images).click();
