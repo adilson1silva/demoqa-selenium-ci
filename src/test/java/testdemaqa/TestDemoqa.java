@@ -111,7 +111,9 @@ public class TestDemoqa extends BaseTest {
 
 
 
-
+    public void testBrokeLink() throws InterruptedException {
+        driver.get("http://demoqa.com/elements");
+    }
 
 
 }
