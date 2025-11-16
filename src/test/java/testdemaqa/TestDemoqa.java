@@ -1,10 +1,7 @@
 package testdemaqa;
 
 import basetest.BaseTest;
-import org.example.ButtonsPage;
-import org.example.ElementsPage;
-import org.example.TextBox;
-import org.example.WebTabela;
+import org.example.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -110,9 +107,14 @@ public class TestDemoqa extends BaseTest {
     }
 
 
-
+    @Test
     public void testBrokeLink() throws InterruptedException {
-        driver.get("http://demoqa.com/elements");
+        ElementsPage elements = new ElementsPage(driver);
+        elements.OpenBrokenLinks_images();
+
+        BrokeLink  brokeLink = new BrokeLink(driver);
+        brokeLink.validtLinks();
+
     }
 
 

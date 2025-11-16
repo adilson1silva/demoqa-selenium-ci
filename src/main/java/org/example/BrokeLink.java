@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class BrokeLink {
+public class BrokeLink{
     private WebDriver driver;
 
     private By validteLink = By.xpath("//a[text()=\"Click Here for Valid Link\"]");
@@ -18,12 +18,12 @@ public class BrokeLink {
 
     public void validtLinks() {
         driver.findElement(validteLink).click();
-        WebElement header = driver.findElement(By.xpath("//div[@class='main-header' and text()='Elements']"));
+        WebElement header = driver.findElement(By.xpath("//div[@class=\"card-body\"]//h5[text()=\"Elements\"]"));
         Assert.assertTrue(header.isDisplayed(), "Página não carregou corretamente");
     }
 
     public void brokeLinks() {
-        driver.findElement(validteLink).click();
+        driver.findElement(brokeLink).click();
         WebElement header = driver.findElement(By.xpath("//div[@class=\"example\"]//h3[text()=\"Status Codes\"]"));
         Assert.assertTrue(header.isDisplayed(), "Página não carregou corretamente");
     }
