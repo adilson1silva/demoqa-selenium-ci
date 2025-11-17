@@ -113,7 +113,7 @@ public class TestDemoqa extends BaseTest {
         elements.OpenBrokenLinks_images();
 
         BrokeLink  brokeLink = new BrokeLink(driver);
-        brokeLink.validtLinks();
+        brokeLink.brokeLinks();
 
     }
 
