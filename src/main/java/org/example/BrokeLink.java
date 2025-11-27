@@ -10,6 +10,8 @@ public class BrokeLink{
 
     private By validteLink = By.xpath("//a[text()=\"Click Here for Valid Link\"]");
     private By brokeLink = By.xpath("//a[text()=\"Click Here for Broken Link\"]");
+    private By newPageValidLink = By.xpath("//div[@class=\"card-body\"]//h5[text()=\"Elements\"]");
+    private By getNewPageBrokeLink = By.xpath("//div[@class=\"example\"]//h3[text()=\"Status Codes\"]");
 
     // construtor
     public BrokeLink(WebDriver driver) {
@@ -18,13 +20,13 @@ public class BrokeLink{
 
     public void validtLinks() {
         driver.findElement(validteLink).click();
-        WebElement header = driver.findElement(By.xpath("//div[@class=\"card-body\"]//h5[text()=\"Elements\"]"));
-        Assert.assertTrue(header.isDisplayed(), "Página não carregou corretamente");
+        WebElement header = driver.findElement(newPageValidLink);
+        Assert.assertTrue(header.isDisplayed(), "A página não carregou corretamente");
     }
 
     public void brokeLinks() {
         driver.findElement(brokeLink).click();
-        WebElement header = driver.findElement(By.xpath("//div[@class=\"example\"]//h3[text()=\"Status Codes\"]"));
-        Assert.assertTrue(header.isDisplayed(), "Página não carregou corretamente");
+        WebElement header = driver.findElement(getNewPageBrokeLink);
+        Assert.assertTrue(header.isDisplayed(), "A página não carregou corretamente");
     }
 }

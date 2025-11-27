@@ -11,7 +11,6 @@ public class TextBox {
     private By fullNameInput = By.id("userName");
     private By emailput = By.id("userEmail");
     private By addressInput = By.id("currentAddress");
-    private By submitButton = By.id("submit");
 
 
     public TextBox(WebDriver driver) {

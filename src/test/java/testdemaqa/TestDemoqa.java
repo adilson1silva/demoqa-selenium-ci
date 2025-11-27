@@ -87,13 +87,19 @@ public class TestDemoqa extends BaseTest {
         buttonsPage.DoDubleClick();
         assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
 
+        // Aqui deve-se acriscentar mais linha de codigo para ter um teste mais consistente
+
         // Clique direito
         buttonsPage.DoRightClick();
         assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
 
+        // Aqui tambem
+
         // Clique normal
         buttonsPage.DoClickMe();
         assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
+
+        //Aqui tambem
     }
 
     @Test
