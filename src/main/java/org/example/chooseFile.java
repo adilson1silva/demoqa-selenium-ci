@@ -27,6 +27,9 @@ public class chooseFile {
         js.executeScript("arguments[0].scrollIntoView(true);", chooseFile);
         chooseFile.click();
 
+        //abrir os os fciheiros locais
+
+
 
     }
 
