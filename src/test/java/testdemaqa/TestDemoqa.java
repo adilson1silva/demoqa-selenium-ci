@@ -19,6 +19,7 @@ public class TestDemoqa extends BaseTest {
     private WebTabela webTabela;
     private ButtonsPage buttonsPage;
     private BrokeLink brokeLink;
+    private chooseFile chooseFile;
 
     @BeforeMethod
     public void setupPages() {
@@ -28,6 +29,7 @@ public class TestDemoqa extends BaseTest {
         webTabela = new WebTabela(driver);
         buttonsPage = new ButtonsPage(driver);
         brokeLink = new BrokeLink(driver);
+        chooseFile = new chooseFile(driver);
 
         driver.get("https://demoqa.com/elements");
     }
@@ -106,6 +108,11 @@ public class TestDemoqa extends BaseTest {
     public void testBrokenLink() {
         elements.OpenBrokenLinks_images();
         brokeLink.brokeLinks();
+    }
+
+    @Test
+    public void choseFile() {
+        //estou cansado preciso terminar este teste pela manha
     }
 
 }
