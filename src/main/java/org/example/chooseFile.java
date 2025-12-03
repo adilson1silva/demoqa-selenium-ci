@@ -28,6 +28,10 @@ public class chooseFile {
         chooseFile.click();
 
         //abrir os os fciheiros locais
+        WebElement upload = driver.findElement(By.cssSelector("input[type='file']"));
+        upload.sendKeys("C:\\Users\\adils\\Downloads\\Adilson Silva (1).pdf");
+
+
 
 
 
