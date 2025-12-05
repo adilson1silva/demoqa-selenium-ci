@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilsclass.UtilsClass;
@@ -34,7 +35,10 @@ public class ElementsPage {
         button.click();
     }
     public void  OpenBrokenLinks_images() {
-        driver.findElement(BrokenLinks_images).click();
+        WebElement LinkTest = driver.findElement(BrokenLinks_images);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", LinkTest);
+        LinkTest.click();
     }
     public void  OpenDynamicProperties() {
         driver.findElement(DynamicProperties).click();

@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -26,6 +27,8 @@ public class WebTabela {
     public void addicionarDadosTabela(String firstName, String lastName, String email, String age, String salary, String departament, String submit){
 
         WebElement buttonAdd = driver.findElement(By.id("addNewRecordButton"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", buttonAdd);
         buttonAdd.click();
 
         driver.findElement(FirstName).sendKeys(firstName);

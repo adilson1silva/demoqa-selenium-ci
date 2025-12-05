@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -25,7 +26,10 @@ public class BrokeLink{
     }
 
     public void brokeLinks() {
-        driver.findElement(brokeLink).click();
+        WebElement BrokeLINK = driver.findElement(brokeLink);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", BrokeLINK);
+        BrokeLINK.click();
         WebElement header = driver.findElement(getNewPageBrokeLink);
         Assert.assertTrue(header.isDisplayed(), "A página não carregou corretamente");
     }
