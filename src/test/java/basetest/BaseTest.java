@@ -15,14 +15,15 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
 
         // ---- Executar em background (headless) ----
+        /*
         options.addArguments("--headless=new");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920,1080");
-
-        driver = new ChromeDriver(options);
-
+*/
+        driver = new ChromeDriver();//options
+        driver.manage().window().maximize();
         driver.get("https://demoqa.com/elements");
     }
 

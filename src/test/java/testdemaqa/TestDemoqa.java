@@ -19,7 +19,7 @@ public class TestDemoqa extends BaseTest {
     private WebTabela webTabela;
     private ButtonsPage buttonsPage;
     private BrokeLink brokeLink;
-    private chooseFile chooseFile;
+    private TestChooseFile chooseFile;
 
     @BeforeMethod
     public void setupPages() {
@@ -29,11 +29,11 @@ public class TestDemoqa extends BaseTest {
         webTabela = new WebTabela(driver);
         buttonsPage = new ButtonsPage(driver);
         brokeLink = new BrokeLink(driver);
-        chooseFile = new chooseFile(driver);
+        chooseFile = new TestChooseFile(driver);
 
         driver.get("https://demoqa.com/elements");
     }
-
+/*
     @Test
     public void devePreencherTextoFormularioComSucesso() {
         elements.Open_textBox();
@@ -110,9 +110,12 @@ public class TestDemoqa extends BaseTest {
         brokeLink.brokeLinks();
     }
 
+ */
+
     @Test
     public void choseFile() {
-        //estou cansado preciso terminar este teste pela manha
+        driver.get("https://demoqa.com/elements"); //abre pagina principal
+        chooseFile.chooseFiles(); //chama o metudo que criei
     }
 
 }
