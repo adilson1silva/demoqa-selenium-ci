@@ -32,10 +32,9 @@ public class TestDemoqa extends BaseTest {
         brokeLink = new BrokeLink(driver);
         chooseFile = new TestChooseFile(driver);
 
-        driver.get("https://demoqa.com/elements");
     }
 
-    @Test
+    @Test (priority = 1)
     public void devePreencherTextoFormularioComSucesso() {
         elements.Open_textBox();
 
@@ -58,13 +57,13 @@ public class TestDemoqa extends BaseTest {
         );
     }
 
-    @Test
+    @Test (priority = 2)
     public void deveAbrirRadioButtonComSucesso() {
         elements.OpenRadioButton();
         // Verifique algo real aqui futuramente
     }
 
-    @Test
+    @Test (priority = 3)
     public void trabalharComWebTabela() throws InterruptedException {
         elements.OpenWebTable();
 
@@ -84,7 +83,7 @@ public class TestDemoqa extends BaseTest {
         webTabela.eliminardados("Alden", "Delete");
     }
 
-    @Test
+    @Test  (priority = 4)
     public void testDoubleClickButton() {
         elements.OpenButtons();
 
@@ -107,7 +106,7 @@ public class TestDemoqa extends BaseTest {
         //Aqui tambem
     }
 
-    @Test
+    @Test (priority = 5)
     public void testBrokenLink() {
         elements.OpenBrokenLinks_images();
         brokeLink.brokeLinks();
@@ -115,10 +114,11 @@ public class TestDemoqa extends BaseTest {
 
 
 
-    @Test
+    @Test  (priority = 6)
     public void choseFile() {
-        driver.get("https://demoqa.com/elements"); //abre pagina principal
-        chooseFile.chooseFiles(); //chama o metudo que criei
+
+        String path ="C:\\Users\\adils\\Downloads\\Adilson Silva (1).pdf";
+        chooseFile.chooseFiles(path); //chama o metudo que criei
     }
 
 }
